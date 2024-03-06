@@ -104,4 +104,98 @@ INSERT INTO USER5 VALUES ('김춘추', 'M', 21, '경주시');
 INSERT INTO USER5 (NAME, GENDER, ADDR) VALUES ('신사임당', 'F', '강릉시');
 INSERT INTO USER5 (NAME, GENDER) VALUES ('이순신', 'M');
 INSERT INTO USER5 (NAME, AGE) VALUES ('정약용', 33);
+
+
+/*
+    날짜 : 2024/03/06
+    이름 : 김선광
+    내용 : 3. 데이터베이스 개체 실습하기
+*/
+
+--실습 3-1 데이터 사전 조회(system 접속)
+select * from DIC;
+
+-- 테이블 조회(현재 사용자 기준)
+SELECT TABLE_NAME FROM USER_TABLES;
+
+-- 전체 테이블 조회(현재 사용자 기준)
+SELECT OWNER, TABLE_NAME FROM ALL_TABLES;
+
+-- 전체 테이블 조회(system 관리자만 가능)
+SELECT * FROM DBA_TABLES;
+
+-- 전체 사용자 조회(system 관리자만 가능)
+SELECT * FROM DBA_USERS;
+
+-- 실습하기 3-2 인덱스 조회/생성/삭제
+
+-- 현재 사용자 인덱스 조회
+SELECT * FROM USER_INDEXES;
+
+-- 현재 사용자 인덱스 정보 조회
+SELECT * FROM USER_IND_COLUMNS;
+
+-- 인덱스 생성
+CREATE INDEX IDX_USER1_UID ON USER1(id);
+SELECT * FROM USER_IND_COLUMNS;
+
+-- 인덱스 삭제
+DROP INDEX IDX_USER1_UID;
+SELECT * FROM USER_IND_COLUMNS;
+
+
+-- 실습하기 3-4 뷰 생성/조회/삭제
+
+-- 뷰 생성
+CREATE VIEW VW_USER1 AS (SELECT NAME, HP, AGE FROM user1);
+CREATE VIEW VW_USER2_AGE_UNDER30 AS (SELECT * FROM user2 WHERE AGE < 30);
+SELECT * FROM USER_VIEWS;
+
+-- 뷰 조회
+SELECT * FROM vw_user1;
+SELECT * FROM vw_user2_age_under30;
+
+-- 뷰 삭제
+DROP VIEW VW_USER1;
+DROP VIEW vw_user2_age_under30;
+
+-- 실습하기 3-5 시퀀스 적용 테이블 생성
+CREATE TABLE USER6 (
+    SEQ     NUMBER PRIMARY KEY,
+    NAME    VARCHAR2(20),
+    GENDER  CHAR(1),
+    AGE     NUMBER,
+    ADDR    VARCHAR2(225)
+    );
     
+-- 실습하기 3-6 시퀀스 생성
+CREATE SEQUENCE SEQ_UESR6 INCREMENT BY 1 START WITH 1;
+
+-- 실습하기 3-7 시퀀스값 생성
+INSERT INTO user6 VALUES (SQL_USER6.NEXTVAL, '김유신', 'M', 25, '김해시');
+INSERT INTO user6 VALUES (seq_USER6.NEXTVAL, '김춘추', 'M', 23, '경주시');
+INSERT INTO user6 VALUES (SEQ_USER6.NEXTVAL, '신사임당', 'F', 25, '강릉시');
+
+-- 실습하기 4-1 사용자 생성
+ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+CREATE USER user1 IDENTIFIED BY abcd1234;
+
+-- 실습하기 4-2 사용자 조회(system 접속)
+SELECT * FROM ALL_USERS;
+
+-- 실습하기 4-3 사용자 변경(system 접속)
+-- 사용자 비밀번호 변경
+ALTER USER user1 IDENTIFIED BY 1234;
+
+-- 사용자 삭제
+DROP USER user1;
+
+-- 사용자와 해당 사용자 객체(테이블 등) 모두 삭제
+DROP USER user1 CASCADE;
+
+-- 실습하기 4-4 Role 부여
+-- 접속 및 생성 권한 부여
+GRANT CONNECT, RESOURCE TO user1;
+
+-- 테이블 스페이스(테이블 파일 생성 공간) 할당량 권한 부여
+GRANT UNLIMITED TABLESPACE TO user1;
