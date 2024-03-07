@@ -1,4 +1,4 @@
-package kr.co.ch05.config;
+package kr.co.user.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -11,7 +11,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = {"kr.co.ch05"})
+@MapperScan(basePackages = {"kr.co.user"})
 public class MyBatisConfig {
 
     @Bean

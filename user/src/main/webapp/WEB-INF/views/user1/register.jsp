@@ -4,22 +4,18 @@
     <title>user1::register</title>
 </head>
 <body>
-<a href="/ch05/user1/list">목록</a>
-<form action="/ch05/user1/register" method="post">
+<a href="/user1/list">목록</a>
+<form action="/user1/register" method="post">
     <table border="1">
 <h3>user1 등록</h3>
 <a href="/ch05">메인</a>
         <tr>
             <td>아이디</td>
-            <td><input type="text" name="uid"></td>
+            <td><input type="text" name="id"></td>
         </tr>
         <tr>
             <td>이름</td>
             <td><input type="text" name="name"></td>
-        </tr>
-        <tr>
-            <td>생년월일</td>
-            <td><input type="date" name="birth"></td>
         </tr>
         <tr>
             <td>휴대폰</td>

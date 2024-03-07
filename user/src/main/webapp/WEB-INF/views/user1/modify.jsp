@@ -5,21 +5,17 @@
 </head>
 <body>
 <h3>user1 수정</h3>
-<a href="/ch05">메인</a>
-<a href="/ch05/user1/list">목록</a>
-<form action="/ch05/user1/modify" method="post">
+<a href="/">메인</a>
+<a href="/user1/list">목록</a>
+<form action="/user1/modify" method="post">
     <table border="1">
         <tr>
             <td>아이디</td>
-            <td><input type="text" name="uid" readonly value="${user1DTO.uid}"></td>
+            <td><input type="text" name="id" readonly value="${user1DTO.id}"></td>
         </tr>
         <tr>
             <td>이름</td>
             <td><input type="text" name="name" value="${user1DTO.name}"></td>
-        </tr>
-        <tr>
-            <td>생년월일</td>
-            <td><input type="date" name="birth" value="${user1DTO.birth}"></td>
         </tr>
         <tr>
             <td>휴대폰</td>
