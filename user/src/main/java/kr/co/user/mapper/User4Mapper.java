@@ -8,8 +8,8 @@ import java.util.List;
 @Mapper
 public interface User4Mapper {
     public void insertUser4(User4DTO user4DTO);
-    public User4DTO selectUser4(String uid);
+    public User4DTO selectUser4(String name);
     public List<User4DTO> selectUser4s();
     public void updateUser4(User4DTO user4DTO);
-    public void deleteUser4(String uid);
+    public void deleteUser4(String name);
 }

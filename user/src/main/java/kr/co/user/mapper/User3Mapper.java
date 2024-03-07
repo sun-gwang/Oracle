@@ -9,8 +9,8 @@ import java.util.List;
 @Mapper
 public interface User3Mapper {
     public void insertUser3(User3DTO user3DTO);
-    public User3DTO selectUser3(String uid);
+    public User3DTO selectUser3(String id);
     public List<User3DTO> selectUser3s();
     public void updateUser3(User3DTO user3DTO);
-    public void deleteUser3(String uid);
+    public void deleteUser3(String id);
 }

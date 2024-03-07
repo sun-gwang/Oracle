@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface User2Mapper {
     public void insertUser2(User2DTO user2DTO);
-    public User2DTO selectUser2(String uid);
+    public User2DTO selectUser2(String id);
     public List<User2DTO> selectUser2s();
     public void updateUser2(User2DTO user2DTO);
     public void deleteUser2(String uid);

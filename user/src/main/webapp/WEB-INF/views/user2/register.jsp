@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>user1::register</title>
+    <title>user2::register</title>
 </head>
 <body>
-<a href="/user1/list">목록</a>
-<form action="/user1/register" method="post">
+<a href="/user2/list">목록</a>
+<form action="/user2/register" method="post">
     <table border="1">
-<h3>user1 등록</h3>
+<h3>user2 등록</h3>
 <a href="/">메인</a>
         <tr>
             <td>아이디</td>

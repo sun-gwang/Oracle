@@ -23,6 +23,10 @@
     <a href="/user5/list">user5 목록</a>
     <a href="/user5/register">user5 등록</a>
 
+    <h4>user6 실습</h4>
+    <a href="/user6/list">user6 목록</a>
+    <a href="/user6/register">user6 등록</a>
+
     <h4>member 실습</h4>
     <a href="/member/list">멤버 목록</a>
     <a href="/member/register">멤버 등록</a>
