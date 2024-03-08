@@ -14,7 +14,7 @@ public class JdbcConfig {
     public DataSource dataSource(){
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        dataSource.setUrl("jdbc:oracle:thin:@//127.0.0.1:1521/orcl");
+        dataSource.setUrl("jdbc:oracle:thin:@//127.0.0.1:1521/orcl2");
         dataSource.setUsername("kc5353");
         dataSource.setPassword("1234");
 

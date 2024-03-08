@@ -32,6 +32,7 @@ public class User4Controller {
         return "/user4/register";
     }
 
+    @PostMapping("/user4/register")
     public String register(User4DTO user4DTO) {
 
         user4Service.insertUser4(user4DTO);

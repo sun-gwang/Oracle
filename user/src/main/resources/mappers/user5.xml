@@ -5,4 +5,24 @@
 
 <mapper namespace="kr.co.user.mapper.User5Mapper">
 
+    <insert id="insertUser5">
+        INSERT INTO USER5 VALUES (#{name},#{gender},#{age},#{addr})
+    </insert>
+
+    <select id="selectUser5">
+        SELECT * FROM USER5 WHERE name=#{name}
+    </select>
+
+    <select id="selectUser5s">
+        SELECT * FROM USER5
+    </select>
+
+    <update id="updateUser5">
+        UPDATE USER5 SET gender=#{gender}, age=#{age}, addr=#{addr} WHERE name=#{name}
+    </update>
+
+    <delete id="deleteUser5">
+        DELETE FROM USER5 WHERE name=#{name}
+    </delete>
+
 </mapper>

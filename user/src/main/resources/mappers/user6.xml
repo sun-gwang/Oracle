@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.user.mapper.User6Mapper">
+
+    <insert id="insertUser6">
+        INSERT INTO USER6 VALUES (SEQ_UESR6.NEXTVAL, #{name}, #{gender}, #{age},#{addr})
+    </insert>
+
+    <select id="selectUser6s">
+        SELECT * FROM USER6
+    </select>
+
+    <select id="selectUser6">
+        SELECT * FROM USER6 WHERE seq=#{seq}
+    </select>
+
+    <update id="updateUser6">
+        UPDATE USER6 SET #{name},#{gender},#{age},#{addr} WHERE seq=#{seq}
+    </update>
+
+    <delete id="deleteUser6">
+        DELETE FROM USER6 WHERE seq=#{seq}
+    </delete>
+</mapper>
