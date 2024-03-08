@@ -27,8 +27,8 @@
         <td>${user.age}</td>
         <td>${user.addr}</td>
         <td>
-            <a href="/user6/modify?name=${user.seq}">수정</a>
-            <a href="/user6/delete?name=${user.seq}">삭제</a>
+            <a href="/user6/modify?seq=${user.seq}">수정</a>
+            <a href="/user6/delete?seq=${user.seq}">삭제</a>
         </td>
     </tr>
     </c:forEach>

@@ -36,7 +36,7 @@ public class User6Controller {
     }
 
     @GetMapping("/user6/modify")
-    public String modify(@RequestParam("seq") int seq, Model model){
+    public String modify(@RequestParam(value = "seq") int seq, Model model){
 
         System.out.println(seq);
         User6DTO user6DTO = user6Service.selectUser6(seq);
