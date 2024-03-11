@@ -27,7 +27,7 @@ public class User5Controller {
     }
     @GetMapping("/user5/register")
     public String register(){
-        return "/user5/list";
+        return "/user5/register";
     }
     @PostMapping("/user5/register")
     public String register(User5DTO user5DTO){

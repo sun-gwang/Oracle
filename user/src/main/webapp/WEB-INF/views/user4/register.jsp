@@ -15,7 +15,14 @@
         </tr>
         <tr>
             <td>성별</td>
-            <td><input type="text" name="gender"></td>
+            <td>
+                <label>
+                    <select name="gender">
+                        <option value="M">M</option>
+                        <option value="F">F</option>
+                    </select>
+                </label>
+            </td>
         </tr>
         <tr>
             <td>나이</td>
